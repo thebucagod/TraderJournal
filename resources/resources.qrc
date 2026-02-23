@@ -1,5 +1,5 @@
 <RCC>
-	<qresource prefix='/'>
-		<file>books.png</file>
-	</qresource>
+    <qresource prefix="/">
+        <file>mainwindows_ref.png</file>
+    </qresource>
 </RCC>
