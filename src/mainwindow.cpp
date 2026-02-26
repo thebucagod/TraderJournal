@@ -13,3 +13,19 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() {
     delete ui;
 }
+
+void MainWindow::on_maximizeB_clicked()
+{
+    if (isMaximized()) {
+        showNormal();
+    } else {
+        showMaximized();
+    }
+}
+
+
+void MainWindow::on_collapseB_clicked()
+{
+    showMinimized();
+}
+

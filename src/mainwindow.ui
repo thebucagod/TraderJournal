@@ -25,7 +25,7 @@
      <number>1</number>
     </property>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,30">
+     <layout class="QVBoxLayout" name="centralwidgetVLayout" stretch="1,30">
       <property name="sizeConstraint">
        <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
       </property>
@@ -45,7 +45,7 @@
           <number>0</number>
          </property>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
+          <layout class="QHBoxLayout" name="titleBarHLayout">
            <item>
             <widget class="QWidget" name="widget" native="true">
              <property name="styleSheet">
@@ -54,7 +54,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="collaps">
+            <widget class="QPushButton" name="collapseB">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -71,12 +71,12 @@
               <string notr="true">border: 1px solid black;</string>
              </property>
              <property name="text">
-              <string>A</string>
+              <string>–</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="maximize">
+            <widget class="QPushButton" name="maximizeB">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -93,12 +93,12 @@
               <string notr="true">border: 1px solid black;</string>
              </property>
              <property name="text">
-              <string>B</string>
+              <string>O</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="close">
+            <widget class="QPushButton" name="closeB">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -115,7 +115,7 @@
               <string notr="true">border: 1px solid black;</string>
              </property>
              <property name="text">
-              <string>C</string>
+              <string>X</string>
              </property>
             </widget>
            </item>
@@ -125,13 +125,55 @@
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="content" native="true"/>
+       <widget class="QWidget" name="content" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QHBoxLayout" name="contentHLayout" stretch="4,1">
+           <item>
+            <widget class="QWidget" name="widget_2" native="true"/>
+           </item>
+           <item>
+            <widget class="calendar" name="calendarWidget" native="true">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </item>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>calendar</class>
+   <extends>QWidget</extends>
+   <header>D:\QProjects\TraderJournal\src\calendar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>closeB</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>776</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
