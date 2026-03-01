@@ -22,6 +22,16 @@ void titleBar::mousePressEvent(QMouseEvent* event) {
     QWidget::mousePressEvent(event);
 }
 
+// Обработка события – перетаскивание курсор виджета с зажатой л.к.м.
+void titleBar::mouseMoveEvent(QMouseEvent* event) {
+    if(dragging && (event->button() & Qt::LeftButton)) {
+        window()->move(event->globalPosition().toPoint() - dragStart);
+        event->accept();
+        return;
+    }
+    QWidget::mouseMoveEvent(event);
+}
+
 titleBar::~titleBar()
 {
     delete ui;
