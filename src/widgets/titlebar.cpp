@@ -24,12 +24,22 @@ void titleBar::mousePressEvent(QMouseEvent* event) {
 
 // Обработка события – перетаскивание курсор виджета с зажатой л.к.м.
 void titleBar::mouseMoveEvent(QMouseEvent* event) {
-    if(dragging && (event->button() & Qt::LeftButton)) {
+    if(dragging && (event->buttons() & Qt::LeftButton)) {
         window()->move(event->globalPosition().toPoint() - dragStart);
         event->accept();
         return;
     }
     QWidget::mouseMoveEvent(event);
+}
+
+// Обработка события – отжатие л.к.м.
+void titleBar::mouseReleaseEvent(QMouseEvent* event) {
+    if(dragging && event->button() == Qt::LeftButton) {
+        dragging = false;
+        event->accept();
+        return;
+    }
+    QWidget::mouseReleaseEvent(event);
 }
 
 titleBar::~titleBar()

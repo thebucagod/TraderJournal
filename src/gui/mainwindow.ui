@@ -30,7 +30,10 @@
        <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
       </property>
       <item>
-       <widget class="QWidget" name="titileBar" native="true">
+       <widget class="titleBar" name="titleBarwidget" native="true">
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid black;</string>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <property name="leftMargin">
           <number>0</number>
@@ -47,17 +50,23 @@
          <item>
           <layout class="QHBoxLayout" name="titleBarHLayout">
            <item>
-            <widget class="QWidget" name="widget" native="true">
-             <property name="styleSheet">
-              <string notr="true">border: 1px solid black;</string>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
-            </widget>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
            <item>
             <widget class="QPushButton" name="collapseB">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>40</width>
                <height>35</height>
               </size>
              </property>
@@ -79,7 +88,7 @@
             <widget class="QPushButton" name="maximizeB">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>40</width>
                <height>35</height>
               </size>
              </property>
@@ -101,7 +110,7 @@
             <widget class="QPushButton" name="closeB">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>40</width>
                <height>35</height>
               </size>
              </property>
@@ -161,6 +170,12 @@
    <class>calendar</class>
    <extends>QWidget</extends>
    <header>calendar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>titleBar</class>
+   <extends>QWidget</extends>
+   <header>titlebar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
