@@ -7,6 +7,7 @@ qt_add_executable(TraderJournal
     widgets/daytilewidget.cpp widgets/daytilewidget.ui
     widgets/calendar.h widgets/calendar.cpp widgets/calendar.ui
     ../resources/resources.qrc
+    widgets/titlebar.h widgets/titlebar.cpp widgets/titlebar.ui
 )
 
 target_include_directories(TraderJournal PRIVATE
