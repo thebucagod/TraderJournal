@@ -130,12 +130,19 @@
          <item>
           <layout class="QHBoxLayout" name="contentHLayout" stretch="4,1">
            <item>
-            <widget class="QWidget" name="widget_2" native="true"/>
-           </item>
-           <item>
             <widget class="calendar" name="calendarWidget" native="true">
              <property name="enabled">
               <bool>true</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid black;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_2" native="true">
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid black;</string>
              </property>
             </widget>
            </item>
@@ -153,7 +160,7 @@
   <customwidget>
    <class>calendar</class>
    <extends>QWidget</extends>
-   <header>D:\QProjects\TraderJournal\src\calendar.h</header>
+   <header>calendar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

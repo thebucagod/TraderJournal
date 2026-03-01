@@ -1,12 +1,18 @@
 qt_add_executable(TraderJournal
-    main.cpp
-    mainwindow.cpp mainwindow.ui
-    daytilewidget.cpp daytilewidget.ui
-    dayviewdialog.cpp dayviewdialog.ui
-    statsdialog.cpp statsdialog.ui
-    calendar.h calendar.cpp calendar.ui
+    gui/main.cpp
+    gui/mainwindow.cpp gui/mainwindow.ui
+    gui/dayviewdialog.cpp gui/dayviewdialog.ui
+    gui/statsdialog.cpp gui/statsdialog.ui
+
+    widgets/daytilewidget.cpp widgets/daytilewidget.ui
+    widgets/calendar.h widgets/calendar.cpp widgets/calendar.ui
     ../resources/resources.qrc
 )
+
+target_include_directories(TraderJournal PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/gui
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets)
 
 target_link_libraries(TraderJournal PRIVATE
     TraderJournalLib
@@ -14,9 +20,6 @@ target_link_libraries(TraderJournal PRIVATE
     Qt6::Charts
     Qt6::Sql
 )
-
-target_include_directories(TraderJournal INTERFACE
-    ${CMAKE_CURRENT_SOURCE_DIR})
 
 set_target_properties(TraderJournal PROPERTIES
     WIN_EXECUTABLE32 TRUE
